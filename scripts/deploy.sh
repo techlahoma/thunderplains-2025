@@ -21,6 +21,7 @@ git checkout -b gh-pages || (echo "Cannot chekout gh-pages branch!" && exit 1)
 
 # Add CNAME file if present
 cp ../CNAME .
+cp ../* .
 
 # Ensure static assets can be served properly
 touch .nojekyll
