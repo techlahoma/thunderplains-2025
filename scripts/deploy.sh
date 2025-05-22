@@ -19,9 +19,10 @@ git remote add origin $GIT_REPO_URL
 git checkout -b gh-pages || (echo "Cannot chekout gh-pages branch!" && exit 1)
 # git pull origin gh-pages --rebase || (echo "Unable to pull remote changes on gh-pages branch!" && exit 1)
 
-# Add CNAME file if present
+# Add files and CNAME if present
+cp -r ../* .
 cp ../CNAME .
-cp ../* .
+rm -rf scripts
 
 # Ensure static assets can be served properly
 touch .nojekyll
