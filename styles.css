@@ -275,7 +275,7 @@ nav {
   color: var(--white);
   margin: auto;
   background-color: #1e1e1e;
-  padding: 3rem;
+  padding: 3rem 2rem;
   margin-right: 0;
   margin-top: 3rem;
   border-radius: 2px 0 0 3rem;
@@ -286,7 +286,6 @@ nav {
 .text-wrapper .copy-container{
   max-width: 690px;
   margin: auto ;
-  margin-left: 2rem;
 }
 
 .subhead-divider {
@@ -340,21 +339,27 @@ nav {
 .btn-container {
   display: flex;
   gap: 1rem;
-  flex-flow: row wrap;
+  flex-flow: column;
   margin: 2em 0;
 }
 .btn-container a{
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 300;
   color: var(--white);
-  border-right: 1px solid var(--white);
-  padding-right: 1rem;
+  border-bottom: 1px solid var(--white);
+  padding-bottom: 1rem;
   text-transform: uppercase;
   margin-top: 0;
+  position: relative;
+}
+.btn-container a::after{
+  content:">";
+  position: absolute;
+  right: 1rem;
 }
 .btn-container a:last-of-type{
-  border-right: none;
-  padding-right: 0;
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 
@@ -384,7 +389,7 @@ nav {
   z-index: 2;
 }
 .band-wrapper h2{
-  font-size: 48px;
+  font-size: 2rem;
   color: var(--white);
   text-align: center;
   font-weight: 800;
@@ -393,11 +398,13 @@ nav {
 .band-wrapper h3{
   font-size: 3rem;
   font-weight: 400;
+  line-height: 105%;
+  margin-bottom: .5rem;
 }
 .band-wrapper.right{
   margin-right: 0;
   margin-left: auto;
-  border-radius: 2px 0 0 72px
+  border-radius: 2px 0 0 72px;
 }
 /* ------ Event Details Band ------ */
 section.event-details-wrapper {
@@ -411,17 +418,7 @@ section.event-details-wrapper {
   position: absolute;
   top: 0;
   right: 0;
-}
-.details-intro{
-  position: relative;
-  padding-bottom: 1.5rem;
-}
-.details-intro h2 {
-  margin: 1rem auto 0;
-  text-align: left;
-  padding-right: 36%;
-  line-height: 1em;
-  font-size: 1.75rem;
+  max-width: 240px;
 }
 .details-info{
   padding: 2rem 0;
@@ -429,15 +426,16 @@ section.event-details-wrapper {
   width: 100%;
   flex-flow: row wrap;
   max-width: 620px;
+  padding-top: 80px;
 }
 .details-info h3{
   flex: 1 0 100%;
   margin-bottom: 2rem;
+  text-shadow: 2px 4px 21px #0009;
 }
 .details-info .details-info-col{
   flex: 1 0 100%;
   padding: 0;
-  text-align: center;
 }
 .details-info .details-info-col h4{
   font-size: 1rem;
@@ -496,6 +494,11 @@ section.event-details-wrapper {
 .speakers-wrapper .flex-wrapper .img-wrap{
   flex: 0 1 250px;
   padding: 2rem 1rem;
+  
+}
+.speakers-wrapper .flex-wrapper .img-wrap img{
+  width: 100%;
+  height: auto;
 }
 .speakers-wrapper p{
   color: var(--darkGrey);
@@ -814,14 +817,15 @@ footer img {
 
 /* ------ Large Phone Styles ------- */
 @media (min-width: 550px) {
+  
   .info {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .header-text {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .sub-header {
-    font-size: 2.66rem;
+    font-size: 1.65rem;
   }
   .comment {
     font-size: 1.75rem;
@@ -829,11 +833,38 @@ footer img {
   .intro {
     font-size: 1.2rem;
   }
+  /* Header Buttons */
+  .btn-container {
+    flex-flow: row wrap;
+  }
+  .btn-container a{
+    font-size: 1.5rem;
+    border-right: 1px solid var(--white);
+    padding-right: 1rem;
+    border-bottom:0;
+    padding-bottom:0;
+  }
+  .btn-container a::after{
+    display: none;
+  }
+  .btn-container a:last-of-type{
+    border-right: none;
+    padding-right: 0;
+    
+  }
 
 }
 
 @media all and (min-width: 660px){
-  
+  .text-wrapper .copy-container{
+    margin-left: 2rem;
+  }
+  .header-text {
+    font-size: 4rem;
+  }
+  .sub-header {
+    font-size: 2.25rem;
+  }
   .details-info .details-info-col{
     flex: 1 0 50%;
     text-align: left;
