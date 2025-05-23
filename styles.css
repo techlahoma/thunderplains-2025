@@ -883,7 +883,12 @@ footer img {
     max-width: 600px;
   }
   
-  
+  .speakers-wrapper .flex-wrapper{
+    gap: 2rem;
+  }
+  .speakers-wrapper .flex-wrapper .img-wrap{
+    flex: 0 1 450px;
+  }
   /* ------ Sponsors ------ */
   .sponsor-group header{
     flex-flow: row;
